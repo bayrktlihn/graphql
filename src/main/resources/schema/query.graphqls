@@ -1,0 +1,27 @@
+type Query{
+    firstQuery : String
+    secondQuery: String
+    fullName(sampleRequest: SampleRequest) : String
+    student(id: Int) : StudentResponse
+}
+
+input SampleRequest{
+    firstName: String!
+    lastName: String
+}
+
+type StudentResponse{
+    id: Int
+    firstName: String
+    lastName: String
+    gender: String
+    birthPlace: String
+    lessons(lessonName: String): [LessonResponse]
+    fullName: String
+}
+
+type LessonResponse{
+    name: String
+    teacherId: Int
+    studentIds: [Int]
+}

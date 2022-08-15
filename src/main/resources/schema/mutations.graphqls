@@ -1,0 +1,29 @@
+type Mutation{
+    createStudent(createStudentRequest: CreateStudentRequest) : StudentResponse
+}
+
+input CreateStudentRequest{
+    firstName: String
+    lastName: String
+    gender: Gender
+    birthPlace: City
+    lessons: [LessonRequest]
+}
+
+input LessonRequest{
+    lessonId: Int
+}
+
+enum Gender{
+    MAN
+    WOMAN
+}
+
+enum City{
+    ISTANBUL,
+    BOLU,
+    TRABZON,
+    BITLIS,
+    IZMIR
+}
+
